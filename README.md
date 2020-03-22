@@ -30,7 +30,7 @@ python snookey.py
 ```
 This command will open a link in your browser allowing you to get an access code from Reddit    
 **NOTE:** The Reddit app you are allowing access is not mine.  It is the client_id of the mobile, in this case android, version of Reddit.    
-![snookey01](https://github.com/Spikeedoo/SnooKey/tree/master/examples/snookey01.PNG)    
+![snookey01](examples/snookey01.PNG)    
 Copy the access code from the localhost callback url and reply to the prompt in your terminal:
 ```
 Please enter your access token: <enter access token here>
@@ -44,14 +44,14 @@ If all goes well you will be given your streamer key and the rpan link people wi
 
 ## How to use your streamer key
 Step 1: Open up your desktop streaming software (in my example, OBS)    
-![snookey02](https://github.com/Spikeedoo/SnooKey/tree/master/examples/snookey02.PNG)    
+![snookey02](examples/snookey02.PNG)    
 Step 2: Navigate to your stream settings (Settings > Stream in OBS)   
-![snookey03](https://github.com/Spikeedoo/SnooKey/tree/master/examples/snookey03.PNG)    
+![snookey03](examples/snookey03.PNG)    
 Step 3: Make sure your Service is set to 'Custom' and fill in the following settings:
 - Server: rtmp://ingest.redd.it/inbound/
 - Stream Key: <your stream key>   
 
-![snookey04](https://github.com/Spikeedoo/SnooKey/tree/master/examples/snookey04.PNG)    
+![snookey04](examples/snookey04.PNG)    
 Now hit 'Apply' and 'OK'
 
 Hit 'Start Streaming' and watch the magic happen!
