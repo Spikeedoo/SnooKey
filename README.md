@@ -7,7 +7,7 @@ Some reddit users figured out a way to stream to RPAN (Reddit's livestreaming pl
 If you have a windows machine, you can run SnooKey without installing python by simply cloning the repository
 (see 'Installation' section) and running ```snookey.exe```
 
-###Method 2 (All platforms)
+### Method 2 (All platforms)
 For this to work you will need Python3 installed to your system.      
 *IF YOUR TERMINAL THINKS 'PYTHON' IS NOT A COMMAND, PYTHON HAS MOST LIKELY NOT BEEN ADDED TO YOUR PATH*     
 [Install Python for Windows](https://realpython.com/installing-python/#windows)   
@@ -19,7 +19,9 @@ pip install requests
 ```
 
 ## Installation
-First, find a folder that you can clone the SnooKey repository to.  Navigate to the folder and run:
+Download the zip file by pressing the green 'Clone or download' button and selecting 'Download ZIP'   
+**OR**    
+Clone the repository with:
 ```
 git clone https://github.com/Spikeedoo/SnooKey.git
 ```
@@ -29,7 +31,7 @@ cd SnooKey
 ```
 
 ## Using SnooKey
-Once you are inside SnooKey's cloned repo, run the script:      
+Once you have SnooKey downloaded, it is time to run the script.     
 (**If you used method #1 simply run ```snookey.exe```**)
 ```
 python snookey.py
@@ -39,7 +41,9 @@ This will open a link in your browser allowing you to get an access code from Re
 One way you can confirm that I am not BS'ing you is by looking at [your apps](https://www.reddit.com/prefs/apps/) after allowing access.
 A third party application would normally appear here in the 'authorized applications' section with the developer's username.  This Reddit-built
 application does not follow the same rules.
+
 ![snookey01](examples/snookey01.PNG)    
+
 Copy the access token from the localhost callback url and reply to the prompt in your terminal:
 ```
 Please enter your access token: <enter access token here>
