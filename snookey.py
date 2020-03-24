@@ -16,7 +16,7 @@ webbrowser.open(request_url, new=0)
 print("HINT: Your code can be found on the localhost callback page.")
 user_token = input("Please enter your access token: ")
 full_token = "Bearer " + user_token
-subreddit = input("Subreddit do you want to broadcast to: ")
+subreddit = input("Subreddit you want to broadcast to: ")
 title = input("Stream title: ")
 
 broadcast_endpoint = "https://strapi.reddit.com/r/%s/broadcasts?title=%s" % (subreddit, title)
@@ -33,9 +33,18 @@ token_req = requests.request("POST", url=broadcast_endpoint, headers=headers, da
 if token_req.status_code == 200:
   # Success!  Stream prepped
   response = token_req.json()
+  print("")
   print("YOUR STREAMER KEY: " + response["data"]["streamer_key"])
   print("YOU ARE LIVE: " + response["data"]["post"]["outboundLink"]["url"])
 else:
   # Failed
+  print("")
   print("ERROR CODE " + str(token_req.status_code))
-  print("The reddit servers said \"NONE SHALL PASS\"!  Your access token may be invalid... Please try again")
+  print("The reddit servers said \"NONE SHALL PASS\"!  Make sure you:")
+  print("[*] Are eligible to stream")
+  print("[*] Have a valid access token")
+  print("[*] Selected a valid RPAN subreddit (no typos)")
+
+# Fix to prevent windows .exe from closing on completion
+print("")
+input("Press enter to exit...")
