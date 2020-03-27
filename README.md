@@ -2,6 +2,8 @@
 Some reddit users figured out a way to stream to RPAN (Reddit's livestreaming platform) from desktop streaming software 
 (like OBS).  Project SnooKey is my attempt at making this possibilty more accessible to RPAN users.
 
+**u/IOnlyPlayAsDrif made an updated version to improve the user experience: [Snookey2](https://github.com/IOnlyPlayAsDrift/Snookey2)**
+
 ## START HERE
 ### Method 1 (Windows only)
 If you have a windows machine, you can run SnooKey without installing python by simply cloning the repository
@@ -16,6 +18,10 @@ For this to work you will need Python3 installed to your system.
 Make sure the python requests module is installed for the script to work:
 ```
 pip install requests
+```
+OR
+```
+pip3 install requests
 ```
 
 ## Installation
@@ -35,6 +41,10 @@ Once you have SnooKey downloaded, it is time to run the script.
 (**If you used method #1 simply run ```snookey.exe```**)
 ```
 python snookey.py
+```
+OR
+```
+python3 snookey.py
 ```
 This will open a link in your browser allowing you to get an access code from Reddit    
 **NOTE:** The Reddit app you are allowing access is not mine.  It is the client_id for the mobile, in this case android, Reddit app.    
@@ -68,5 +78,7 @@ Step 3: Make sure your Service is set to 'Custom' and fill in the following sett
 Now hit 'Apply' and 'OK'
 
 Hit 'Start Streaming' and watch the magic happen!
+
+Right now we believe 1080x1920 downscaled to 720x1280 is the way to go.
 
 Disclaimer: I am not liable for your stupidity.  Please be responsible and follow the [Rules](https://www.redditinc.com/policies/broadcasting-content-policy).  Cheers.  
