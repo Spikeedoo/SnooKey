@@ -52,12 +52,8 @@ One way you can confirm that I am not BS'ing you is by looking at [your apps](ht
 A third party application would normally appear here in the 'authorized applications' section with the developer's username.  This Reddit-built
 application does not follow the same rules.
 
-![snookey01](examples/snookey01.PNG)    
+Thanks to Zipdox's contribution, the access token is automatically passed to the terminal and you can close your browser.   
 
-Copy the access token from the localhost callback url and reply to the prompt in your terminal:
-```
-Please enter your access token: <enter access token here>
-```
 Follow the next two prompts by passing the subreddit you want to broadcast to and your stream's title:
 ```
 Subreddit you want to broadcast to: <i.e. distantsocializing>
