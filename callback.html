@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const token = /#access_token=([^]*)\&token/.exec(window.location.href)[1];
+            window.location.href = window.location.origin + `/submittoken?token=${token}`;
+        </script>
+    </head>
+    <body>
+        <h1>Wait one second...</h1>
+    </body>
+</html>

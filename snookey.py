@@ -1,5 +1,6 @@
 import webbrowser
 import requests
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
 # 'Reddit for Android' Client ID
 client_id = "ohXpoqrZYub1kg"
@@ -12,9 +13,26 @@ request_url = "https://www.reddit.com/api/v1/authorize?client_id=%s&response_typ
 #Open browser to get access token
 webbrowser.open(request_url, new=0)
 
-#Get user input
-print("HINT: Your code can be found on the localhost callback page.")
-user_token = input("Please enter your access token: ")
+
+# Get the token from the callback page
+callbackhtml = open('callback.html', 'r').read()
+user_token = ''
+class Serv(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        if self.path.startswith('/callback'):
+            self.wfile.write(bytes(callbackhtml, 'utf-8'))
+        if self.path.startswith('/submittoken'):
+            self.wfile.write(bytes('<html><body><h1>You may close this tab now.</h1></body></html>', 'utf-8'))
+            global user_token
+            user_token = self.requestline.split(' ')[1].split('?token=')[1]
+
+httpd = HTTPServer(('localhost', 65010), Serv)
+httpd.handle_request()
+httpd.handle_request()
+
+
 full_token = "Bearer " + user_token
 subreddit = input("Subreddit you want to broadcast to: ")
 title = input("Stream title: ")
