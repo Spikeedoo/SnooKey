@@ -2,6 +2,9 @@ import webbrowser
 import requests
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+print("Welcome to SnooKey v1.0", flush=True)
+print("Waiting for access token...", flush=True)
+
 # 'Reddit for Android' Client ID
 client_id = "ohXpoqrZYub1kg"
 response_type = "token"
