@@ -2,7 +2,8 @@
 Some reddit users figured out a way to stream to RPAN (Reddit's livestreaming platform) from desktop streaming software 
 (like OBS).  Project SnooKey is my attempt at making this possibilty more accessible to RPAN users.
 
-**u/IOnlyPlayAsDrif made an updated version to improve the user experience: [Snookey2](https://github.com/IOnlyPlayAsDrift/Snookey2)**
+**u/IOnlyPlayAsDrif made an updated version to improve the user experience: [Snookey2](https://github.com/IOnlyPlayAsDrift/Snookey2)**  
+**u/premek_v made a bash based version for Linux systems! [SnooKey (Bash)](https://github.com/premek/rpan)**
 
 ## START HERE
 ### Method 1 (Windows only)
