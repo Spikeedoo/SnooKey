@@ -83,8 +83,15 @@ else:
     # Config file does not exist- we need a new token
     full_token=get_token()
 
-rpan_subreddits = ["pan", "AnimalsOnReddit", "distantsocializing", "GlamourSchool", "RedditInTheKitchen", "RedditMasterClasses", "RedditSessions",
-                   "talentShow", "TheArtistStudio", "TheGamerLounge", "TheYouShow", "whereintheworld"]
+headers = {
+    'User-Agent': 'Project SnooKey/0.1',
+    'Authorization': full_token
+}
+
+# Live check of valid RPAN subreddits
+subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits")
+rpan_subreddits = subreddit_check.json()["data"]
+
 while True:
     subreddit = input("Subreddit you want to broadcast to: ")
     if subreddit in rpan_subreddits:
