@@ -88,12 +88,15 @@ headers = {
     'Authorization': full_token
 }
 
-# Live check of valid RPAN subreddits
-subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits")
-rpan_subreddits = subreddit_check.json()["data"]
+# Live check of valid RPAN subreddits - currently broken due to endpoint
+#subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits")
+#rpan_subreddits = subreddit_check.json()["data"]
+# Crappy hotfix below
+rpan_subreddits = ["pan", "animalsonreddit", "distantsocializing", "glamourschool", "headlineworthy", "redditinthekitchen", "redditmasterclasses", "redditsessions", "talentshow", "theartiststudio", "thegamerlounge", "theyoushow", "whereintheworld"]
 
 while True:
     subreddit = input("Subreddit you want to broadcast to: ")
+    subreddit = subreddit.lower()
     if subreddit in rpan_subreddits:
         if subreddit == "pan":
             print("NOTICE: You are only able to stream to r/pan during specific hours.  Please visit reddit.com/r/pan to learn more.")
