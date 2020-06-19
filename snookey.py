@@ -92,7 +92,7 @@ headers = {
 #subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits")
 #rpan_subreddits = subreddit_check.json()["data"]
 # Crappy hotfix below
-rpan_subreddits = ["pan", "animalsonreddit", "distantsocializing", "glamourschool", "headlineworthy", "redditinthekitchen", "redditmasterclasses", "redditsessions", "talentshow", "theartiststudio", "thegamerlounge", "theyoushow", "whereintheworld"]
+rpan_subreddits = ["pan", "animalsonreddit", "distantsocializing", "glamourschool", "headlineworthy", "readwithme", "redditinthekitchen", "redditmasterclasses", "redditsessions", "shortcircuit", "talentshow", "theartiststudio", "thegamerlounge", "theyoushow", "whereintheworld"]
 
 while True:
     subreddit = input("Subreddit you want to broadcast to: ")
