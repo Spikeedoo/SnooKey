@@ -2,3 +2,4 @@ env
 setup.py
 snookey.spec
 config.txt
+.idea/
