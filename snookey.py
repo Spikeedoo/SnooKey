@@ -88,7 +88,7 @@ headers = {
     'Authorization': full_token
 }
 
-# Live check of valid RPAN subreddits - currently broken due to endpoint
+# Live check of valid RPAN subreddits
 subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits", headers=headers)
 rpan_subreddits = subreddit_check.json()["data"]
 
