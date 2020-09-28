@@ -92,6 +92,9 @@ headers = {
 subreddit_check = requests.request("GET", url="https://strapi.reddit.com/recommended_broadcast_subreddits", headers=headers)
 rpan_subreddits = subreddit_check.json()["data"]
 
+for x in range(len(rpan_subreddits)):
+    rpan_subreddits[x] = rpan_subreddits[x].lower()
+
 while True:
     subreddit = input("Subreddit you want to broadcast to: ")
     subreddit = subreddit.lower()
