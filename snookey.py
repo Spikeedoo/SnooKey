@@ -3,22 +3,33 @@ import requests
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import subprocess
 from pathlib import Path
+from getpass import getpass
 
 print("Welcome to SnooKey v1.0", flush=True)
 print("Waiting for access token...", flush=True)
 
 def get_token():
+        username = input("Enter your Reddit username: ")
+        password = getpass("Enter your Reddit password: ")
+        login_data = '{"username": '+username+',"password": '+password+'}'
+
+        login_flow = requests.request("POST", url="https://accounts.reddit.com/api/login", data=login_data)
+        login_response = login_flow.json()
+        reddit_cookie = ''
+        if login_response["success"]:
+            reddit_cookie = login_flow.cookies["reddit_session"]
+
         # 'Reddit for Android' Client ID
         client_id = "ohXpoqrZYub1kg"
         response_type = "token"
-        scope = "*"
+        scope = "*+email+pii"
         callback = "http://localhost:65010/callback"
         state = "SNOOKEY"
         request_url = "https://www.reddit.com/api/v1/authorize?client_id=%s&response_type=%s&redirect_uri=%s&scope=%s&state=%s" % (
         client_id, response_type, callback, scope, state)
 
         # Open browser to get access token
-        webbrowser.open(request_url, new=0)
+        #webbrowser.open(request_url, new=0)
 
         # Get the token from the callback page
         callbackhtml = open('callback.html', 'r').read()
@@ -48,7 +59,7 @@ def get_token():
             # Doesn't exist - create it, write to it, and hide it
             with open("config.txt", 'w', encoding='utf-8') as f:
                 f.write(user_token)
-            subprocess.check_call(["attrib", '+H', 'config.txt'])
+            #subprocess.check_call(["attrib", '+H', 'config.txt'])
         full_token = "Bearer " + user_token
         return full_token
 
