@@ -19,20 +19,6 @@ print("Welcome to SnooKey v2.0", flush=True)
 print("Waiting for access token...", flush=True)
 
 def get_token():
-    # Pre request to get Reddit cookie headers
-    get_pre_data = requests.request("POST", "https://ssl.reddit.com/api/login/")
-    cookie = get_pre_data.headers['set-cookie']
-    result = re.search('loid=(.*?);', cookie)
-    loid = result.group(1)
-    result = re.search('session_tracker=(.*?);', cookie)
-    session_tracker = result.group(1)
-    result = re.search('edgebucket=(.*?);', cookie)
-    edgebucket = result.group(1)
-    csv=1
-
-    # Build cookie string
-    cookie_string = "csv=" + str(csv) + "; edgebucket=" + edgebucket + "; loid=" + loid + "; session_tracker=" + session_tracker
-
     # Login
     user_token = ''
     while True:
@@ -50,8 +36,7 @@ def get_token():
 
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Project SnooKey/0.2',
-            'Cookie': cookie_string
+            'User-Agent': 'Project SnooKey/0.2'
         }
 
         # Make login request
@@ -82,6 +67,8 @@ def get_token():
         else:
             if (login_response["json"]["errors"][0][0] == "WRONG_PASSWORD"):
                 print("Incorrect username/password combo!")
+                print(payload)
+                print(login_response)
                 continue
             else:
                 print("Login error occurred!")
