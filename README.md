@@ -50,15 +50,9 @@ OR
 ```
 python3 snookey.py
 ```
-This will open a link in your browser allowing you to get an access code from Reddit    
-**NOTE:** The Reddit app you are allowing access is not mine.  It is the client_id for the mobile, in this case android, Reddit app.    
-One way you can confirm that I am not BS'ing you is by looking at [your apps](https://www.reddit.com/prefs/apps/) after allowing access.
-A third party application would normally appear here in the 'authorized applications' section with the developer's username.  This Reddit-built
-application does not follow the same rules.
+After some Reddit backend changes, the current auth flow will ask you to enter your username and password. 
 
-Thanks to Zipdox's contribution, the access token is automatically passed to the terminal and you can close your browser.   
-
-Follow the next two prompts by passing the subreddit you want to broadcast to and your stream's title:
+After a successful login, follow the next two prompts by passing the subreddit you want to broadcast to and your stream's title:
 ```
 Subreddit you want to broadcast to: <i.e. distantsocializing>
 Stream title: <i.e. RPAN and chill!>
@@ -81,4 +75,4 @@ Hit 'Start Streaming' and watch the magic happen!
 
 Right now we believe 1080x1920 downscaled to 720x1280 is the way to go.
 
-Disclaimer: I am not liable for your stupidity.  Please be responsible and follow the [Rules](https://www.redditinc.com/policies/broadcasting-content-policy).  Cheers.  
+Please be responsible and follow the [Rules](https://www.redditinc.com/policies/broadcasting-content-policy).  Cheers.  
