@@ -67,8 +67,6 @@ def get_token():
         else:
             if (login_response["json"]["errors"][0][0] == "WRONG_PASSWORD"):
                 print("Incorrect username/password combo!")
-                print(payload)
-                print(login_response)
                 continue
             else:
                 print("Login error occurred!")
